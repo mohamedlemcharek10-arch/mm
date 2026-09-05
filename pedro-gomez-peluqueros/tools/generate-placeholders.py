@@ -200,26 +200,22 @@ def render(name, w, h, bg_top, bg_bottom, glow_color, line_color, motif_fn, dark
 
 def main():
     print("Generando placeholders elegantes...\n")
+    print("AVISO: 'about-interior' y las fotos de peinados ya usan fotografia")
+    print("real del salon (ver assets/photos/source/). Este script ya NO las")
+    print("regenera para no pisarlas — solo repone las categorias que siguen")
+    print("en placeholder (corte, coloracion, balayage, herramientas).\n")
 
     # HERO — amplio, tono oscuro/anthracite para que el overlay del hero funcione
     render("hero", 2000, 1250, (24, 22, 20), (14, 13, 12), GOLD, GOLD_SOFT,
            motif_wave_hair, dark=True, motifs=1, size_mul=3.6)
 
-    # SOBRE NOSOTROS — interior calido, tono crema
-    render("about-interior", 1600, 1200, CREAM, CREAM_2, GOLD, INK_2,
-           motif_chair, dark=False, motifs=1, size_mul=2.6)
-
-    # GALERIA — 8 piezas, mezcla de retrato y cuadrado
+    # GALERIA — categorias que aun no tienen fotografia real
     render("gallery-corte-1", 1200, 1500, CREAM, CREAM_2, GOLD, INK_2, motif_scissors, size_mul=1.4)
     render("gallery-coloracion-1", 1200, 1500, (250, 244, 233), (238, 226, 202), GOLD, INK_2, motif_brush_strokes, size_mul=1.5)
     render("gallery-balayage-1", 1200, 1200, CREAM_2, (233, 219, 191), GOLD, INK_2, motif_wave_hair, size_mul=1.6)
-    render("gallery-peinado-1", 1200, 1500, PAPER, CREAM, GOLD, INK_2, motif_updo, size_mul=1.5)
-    render("gallery-interior-1", 1200, 1500, CREAM, (236, 227, 209), GOLD, INK_2, motif_chair, size_mul=1.5)
     render("gallery-herramientas-1", 1200, 1200, (247, 241, 230), CREAM_2, GOLD, INK_2, motif_dryer, size_mul=1.4)
-    render("gallery-corte-2", 1200, 1500, (24, 22, 20), (16, 15, 14), GOLD, GOLD_SOFT, motif_scissors, dark=True, size_mul=1.4)
-    render("gallery-coloracion-2", 1200, 1500, CREAM, (240, 231, 211), GOLD, INK_2, motif_comb, size_mul=1.3)
 
-    print("\nListo. Todas las imagenes en assets/img/*.webp")
+    print("\nListo. Categorias sin foto real repuestas en assets/img/*.webp")
 
 
 if __name__ == "__main__":
